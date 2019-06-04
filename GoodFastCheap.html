@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Good Fast Cheap</title>
+</head>
+<body>
+<div id="layout" align="center">
+    <div>Good: <input type="range" name="good" value="1" min="1" max="2" id="good" onclick="check1(1);"></div> <br>
+    <div>Fast: <input type="range" name="fast" value="1" min="1" max="2" id="fast" onclick="check1(2);"></div> <br>
+    <div>Cheap:<input type="range" name="cheap" value="1" min="1" max="2" id="cheap" onclick="check1(3);"></div> <br>
+</div>
+</body>
+<script>
+    function check1(num) {
+        let x = document.getElementById('good').value;
+        let y = document.getElementById('fast').value;
+        let z = document.getElementById('cheap').value;
+        switch (num) {
+            case 1:
+                if (x == y && x == 2)  {
+                    document.getElementById('cheap').value = 1;
+                }
+                else if (x == z && x == 2) {
+                    document.getElementById('good').value = 1;
+                }
+                break;
+            case 2:
+                if (y == x && y == 2) {
+                    document.getElementById('cheap').value = 1;
+                }
+                else if (y == z && y == 2) {
+                    document.getElementById('good').value = 1;
+                }
+                break;
+            case 3:
+                if(z == y && z  == 2) {
+                    document.getElementById('good').value =1;
+                }
+                else if(z == x && z == 2){
+                    document.getElementById('fast').value = 1;
+                }
+                break;
+        }
+    }
+
+    /*function check() {
+        let x = document.getElementById('good').value;
+        let y = document.getElementById('fast').value;
+        let z = document.getElementById('cheap').value;
+
+        if (x == y && x == 2 && y ==2){
+            document.getElementById('cheap').value = 1;
+        }
+        else if(x == z && x == 2 && z ==2) {
+            document.getElementById('fast').value = 1;
+        }
+        else if(y == z && y == 2 && z == 2 ){
+            document.getElementById('good').value = 1;
+        }
+    }*/
+
+</script>
+</html>
